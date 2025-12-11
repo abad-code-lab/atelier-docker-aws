@@ -1,0 +1,7 @@
+com\example\demo\config\WebConfig.class
+com\example\demo\DemoApplication.class
+com\example\demo\entity\Person.class
+com\example\demo\repository\PersonRepository.class
+com\example\demo\controller\PersonController.class
+com\example\demo\service\impl\PersonServiceImpl.class
+com\example\demo\service\PersonService.class
