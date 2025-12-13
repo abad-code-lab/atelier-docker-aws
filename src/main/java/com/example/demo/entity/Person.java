@@ -30,6 +30,9 @@ public class Person {
 
     private String phoneNumber;
 
+    @Column(length = 500)
+    private String description;
+
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
@@ -38,12 +41,14 @@ public class Person {
     public Person() {
     }
 
-    public Person(String firstName, String lastName, String email, Integer age, String phoneNumber) {
+    public Person(String firstName, String lastName, String email, Integer age, String phoneNumber,
+            String description) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.age = age;
         this.phoneNumber = phoneNumber;
+        this.description = description;
     }
 
     @PrePersist
@@ -106,6 +111,14 @@ public class Person {
         this.phoneNumber = phoneNumber;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -131,6 +144,7 @@ public class Person {
                 ", email='" + email + '\'' +
                 ", age=" + age +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", description='" + description + '\'' +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
                 '}';

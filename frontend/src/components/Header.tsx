@@ -1,26 +1,34 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { UserGroupIcon } from '@heroicons/react/24/outline';
 
 const Header: React.FC = () => {
     return (
-        <header className="bg-white shadow">
+        <header className="sticky top-0 z-50 w-full backdrop-blur-lg bg-white/70 border-b border-slate-200/60 supports-backdrop-blur:bg-white/60">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between h-16">
-                    <div className="flex">
-                        <div className="flex-shrink-0 flex items-center">
-                            <Link to="/" className="flex items-center text-indigo-600 font-bold text-xl">
-                                <UserGroupIcon className="h-8 w-8 mr-2" />
-                                Person Manager
-                            </Link>
-                        </div>
-                        <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
-                            <Link to="/" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                Persons
-                            </Link>
-                            <Link to="/create" className="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
-                                Create New
-                            </Link>
+                <div className="flex justify-between h-16 items-center">
+                    <div className="flex items-center gap-2">
+                        <Link to="/" className="flex items-center gap-2 group">
+                            <div className="bg-indigo-600 rounded-lg p-1.5 group-hover:bg-indigo-700 transition-colors duration-200">
+                                <svg className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <span className="font-bold text-xl tracking-tight text-slate-900 group-hover:text-indigo-600 transition-colors">
+                                GestionPersonnes
+                            </span>
+                        </Link>
+                    </div>
+                    <nav className="hidden md:flex space-x-8">
+                        <Link to="/" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">
+                            Tableau de bord
+                        </Link>
+                        <Link to="/create" className="text-sm font-medium text-slate-600 hover:text-indigo-600 transition-colors">
+                            Nouveau membre
+                        </Link>
+                    </nav>
+                    <div className="flex items-center">
+                        <div className="h-8 w-8 rounded-full bg-slate-200 border border-slate-300 flex items-center justify-center text-xs font-medium text-slate-600 cursor-pointer hover:bg-slate-300 transition-colors">
+                            AD
                         </div>
                     </div>
                 </div>

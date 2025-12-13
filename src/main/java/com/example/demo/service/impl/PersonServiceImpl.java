@@ -45,10 +45,10 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Person updatePerson(Long id, Person personDetails) {
         return personRepository.findById(id).map(existingPerson -> {
-            
+
             // Check if email is being updated and if it's unique
-            if (!existingPerson.getEmail().equals(personDetails.getEmail()) && 
-                personRepository.existsByEmail(personDetails.getEmail())) {
+            if (!existingPerson.getEmail().equals(personDetails.getEmail()) &&
+                    personRepository.existsByEmail(personDetails.getEmail())) {
                 throw new IllegalArgumentException("Email " + personDetails.getEmail() + " is already in use");
             }
 
@@ -57,7 +57,8 @@ public class PersonServiceImpl implements PersonService {
             existingPerson.setEmail(personDetails.getEmail());
             existingPerson.setAge(personDetails.getAge());
             existingPerson.setPhoneNumber(personDetails.getPhoneNumber());
-            
+            existingPerson.setDescription(personDetails.getDescription());
+
             return personRepository.save(existingPerson);
         }).orElseThrow(() -> new IllegalArgumentException("Person not found with id " + id));
     }
