@@ -4,7 +4,7 @@ import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { personService } from '../api/personService';
 import toast from 'react-hot-toast';
-import { UserCircleIcon, EnvelopeIcon, PhoneIcon, CalendarIcon, ArrowLeftIcon } from '@heroicons/react/24/outline'; // Using 24/outline for inputs
+import { EnvelopeIcon, PhoneIcon, CalendarIcon, ArrowLeftIcon } from '@heroicons/react/24/outline'; // Using 24/outline for inputs
 
 const PersonForm: React.FC = () => {
     const { id } = useParams<{ id: string }>();
@@ -124,7 +124,7 @@ const PersonForm: React.FC = () => {
                                     className={`block w-full rounded-lg border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm py-2.5 px-3 transition-colors ${formik.touched.firstName && formik.errors.firstName ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
                                     placeholder="Abad"
                                 />
-                            </div> 
+                            </div>
 
                             {formik.touched.firstName && formik.errors.firstName && (
                                 <p className="absolute -bottom-6 left-0 text-xs text-red-500 font-medium">{formik.errors.firstName}</p>
@@ -141,7 +141,7 @@ const PersonForm: React.FC = () => {
                                 id="lastName"
                                 {...formik.getFieldProps('lastName')}
                                 className={`block w-full rounded-lg border-slate-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm py-2.5 px-3 transition-colors ${formik.touched.lastName && formik.errors.lastName ? 'border-red-300 focus:border-red-500 focus:ring-red-500' : ''}`}
-                                placeholder="DAFFE" 
+                                placeholder="DAFFE"
                             />
                             {formik.touched.lastName && formik.errors.lastName && (
                                 <p className="absolute -bottom-6 left-0 text-xs text-red-500 font-medium">{formik.errors.lastName}</p>
@@ -214,7 +214,7 @@ const PersonForm: React.FC = () => {
                         {/* Description */}
                         <div className="sm:col-span-2 relative">
                             <label htmlFor="description" className="block text-sm font-semibold text-slate-700 mb-1.5">
-                                Description 
+                                Description
                             </label>
                             <textarea
                                 id="description"

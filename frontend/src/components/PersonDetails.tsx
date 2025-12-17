@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { personService } from '../api/personService';
 import type { Person } from '../types/Person';
 import toast from 'react-hot-toast';
-import { UserCircleIcon, EnvelopeIcon, PhoneIcon, CalendarIcon, ArrowLeftIcon, PencilSquareIcon, ClockIcon } from '@heroicons/react/24/outline';
+import { EnvelopeIcon, PhoneIcon, CalendarIcon, ArrowLeftIcon, PencilSquareIcon, ClockIcon } from '@heroicons/react/24/outline';
 
 const PersonDetails: React.FC = () => {
     const { id } = useParams<{ id: string }>();
